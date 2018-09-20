@@ -1,0 +1,33 @@
+{
+  "name": "node-dependency-injector",
+  "version": "0.0.1",
+  "description": "A small and smart Dependency injection package for node without external dependencies",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mibaatwork/node-dependency-injector.git"
+  },
+  "keywords": [
+    "dependency-injection",
+    "dependency-injection-container",
+    "node-di",
+    "inversion-of-control",
+    "service-locator",
+    "DIC"
+  ],
+  "author": "Michael Bauer <npm@mibaatwork.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mibaatwork/node-dependency-injector/issues"
+  },
+  "homepage": "https://github.com/mibaatwork/node-dependency-injector#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
