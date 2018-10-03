@@ -40,22 +40,22 @@ npm test
 The easiest way to integrate nDI is to use in the container and hand over your objects.
 You get a di module that you can instantiate.
 
-```
+```js
 const di = require('node-dependency-injector').getDic();
 
 let MyDIC = new di();
 ```
 or require a shared instance of the nDI if you use it in multiple files
-```
+```js
 let MyDIC = require('node-dependency-injector');
 ```
 Here you can register your objects.
-```
+```js
 let myResource = { someProp: 'someData'};
 MyDIC.set('myNamedResource', myResource);
 ```
 at another place in the code you can use:
-```
+```js
 let myIncredibleObject = MyDIC.get('myNamedResource');
 
 // do something meaningful with your Object
@@ -66,17 +66,17 @@ This is nothing exciting and can be realized with normal variable declarations.
 Wait, it will be more exciting!
 
 You can test an existing resource with:
-```
+```js
 let myConfig = { path: './someData/'};
 MyDIC.set('config', myConfig);
 
-if (MyDIC.has('config')) {
- ... do something
+if (MyDIC.has('config')){
+ //... do something
 }
 ```
 
 Here we go! **The factory!**
-```javascript
+```js
 const animal = class Animal{ 
     constructor(){}
     bark(){ return 'GRRRRRR'; }
@@ -89,7 +89,7 @@ MyDIC.set('myAnimal', new animal());
 
 Get a Instance from your Resource
 
-```javascript
+```js
 let Fiffi = MyDIC.get('myAnimal');
 
 console.log(Fiffi.bark());
@@ -98,7 +98,7 @@ console.log(Fiffi.bark());
 #### More advanced code usage
 
 for example you have a class file
-```
+```js
 // animal.js
 class Animal {
     constructor(name){
@@ -113,7 +113,7 @@ class Animal {
 module.exports = Animal;
 ```
 you can use a config variable or configFile
-```
+```js
 let serviceConfig = {
        autoload: true,
        parameters: {
@@ -130,35 +130,34 @@ let serviceConfig = {
 ```
 set it to nDI via setConfig
 
-```
+```js
 MyDIC.setConfig(serviceConfig);
 ```
 and get your Class Instance from the DI
-```
+```js
 let MyCat = MyDIC.get('@animal');
 console.log(MyCat.getName()); // => Kitty
 ```
-configfile
-autoloader
-
 
 ### Summary:
 ```
-MyDIC.set('name', data) inserts a resource 
+MyDIC.set('name', data); // inserts a resource 
 ```
 ```
-MyDIC.get('name') will return a resource
+MyDIC.get('name'); // will return a resource
 ```
 ```
-MyDIC.has('...') will return a boolean, true if a resource is present
+MyDIC.has('...'); // will return a boolean, true if a resource is present
 ```
 ```
-MyDIC.setConfig({...}); will set your config, don't forget the autoloader!
+MyDIC.setConfig({...}); // will set your config, don't forget the autoloader!
 ```
 ```
-MyDIC.get('@resourceName') will instantiate your resource from a config or configFile
+MyDIC.get('@resourceName'); // will instantiate your resource from a config or configFile
 ```
 and what is next?
 
 - Fileloader integration for configfiles
 - maybe yaml support
+
+Happy Coding!
