@@ -1,10 +1,10 @@
 {
   "name": "node-dependency-injector",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A small and smart Dependency injection package for node without external dependencies",
-  "main": "lib/index.js",
+  "main": "src/nodedi.js",
   "directories": {
-    "lib": "lib"
+    "src": "src"
   },
   "scripts": {
     "test": "jest"

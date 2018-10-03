@@ -1,7 +1,6 @@
 module.exports = {
     bail: true,
     verbose: true,
-    testRegex: "tests/.*\\.(js)$",
     collectCoverage: true,
     coverageReporters: ["html"],
     coverageThreshold: {
