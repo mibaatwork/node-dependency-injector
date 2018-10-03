@@ -3,7 +3,7 @@
 ![nDI](./docs/ndi-logo128x128.png) **node-dependency-injector**
 
 
-###A small and smart Dependency injection package for node.js without external dependencie, inspired by the powerful Symfony DI container.
+### A small and smart Dependency injection package for node.js without external dependencie, inspired by the powerful Symfony DI container.
 <hr>
 
 ### Why nDI?
